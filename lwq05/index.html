@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>this.props.children</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    var NodeList = React.createClass({
+       render:function () {
+           return (
+                   <ol>
+                       {
+                           React.Children.map(this.props.children, function (child){
+                               return <li>{child}</li>;
+                           })
+                       }
+               </ol>
+           );
+       }
+    });
+    ReactDOM.render(
+            <NodeList>
+                <span>Hello</span>
+                <span>World</span>
+                </NodeList>,
+            document.getElementById('example')
+    );
+</script>
+<div>
+    <ol>
+        <li>
+            <span>ni hao </span>
+        </li>
+        <li>
+            <span>shi jie</span>
+        </li>
+    </ol>
+</div>
+
+<div id="example"></div>
+</body>
+</html>
