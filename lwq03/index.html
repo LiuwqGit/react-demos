@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>arr</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var arr = [
+           <h1>Hello World</h1>,
+            <p>ReactDOM render Arr</p>
+        ] ;
+        ReactDOM.render(
+                <div>{arr}</div>,
+                document.getElementById('example')
+        );
+    </script>
+</body>
+</html>
