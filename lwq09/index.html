@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>表单</title>
+
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <!--前两个js文件，顺序不能乱-->
+    <script src="../build/browser.min.js"></script>
+
+</head>
+<body>
+<!--//用户在表单填入的内容，属于用户跟组件的互动，所以不能用 this.props 读取-->
+<div id="example"></div>
+    <script type="text/babel">
+        var Input = React.createClass({
+            getInitialState: function () {
+                return {value: "Hello world!"};
+            },
+            handleChange: function (event) {
+                this.setState({ value: event.target.value});
+            },
+            render: function () {
+                var value = this.state.value;
+                return (
+                        <div>
+                            <input id="inputx" type="text" value = {value} onChange={this.handleChange} />
+                            <p>{value}</p>
+                        </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+                <Input />,
+                document.getElementById('example')
+        )
+
+    </script>
+</body>
+</html>
